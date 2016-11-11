@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>test</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="JQuery-PeriodicalUpdater/jquery.periodicalupdater.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        $.PeriodicalUpdater('./content.html',{
+          method: 'get',
+          minTimeout: 500, // starting value for the timeout in milliseconds
+	        maxTimeout:1000, // maximum length of time between requests
+	        multiplier: 1,    // if set to 2, timerInterval will double each time the response hasn't changed (up to maxTimeout)
+
+
+          type: 'html'
+        },
+
+        function(data){
+          <!-- 元々の実装、PeriodicalUpdaterで読み込んでいるためloadは不要、textの更新だけ行う
+          $("#ajax_txt").load("./content.html");
+          -->
+          $("#ajax_txt").text(data);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="ajax_txt">aaa</div>
+  </body>
+</html>
