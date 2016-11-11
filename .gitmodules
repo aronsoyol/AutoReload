@@ -1,0 +1,3 @@
+[submodule "JQuery-PeriodicalUpdater"]
+	path = JQuery-PeriodicalUpdater
+	url = https://github.com/RobertFischer/JQuery-PeriodicalUpdater.git
